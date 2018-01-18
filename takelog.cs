@@ -57,7 +57,7 @@ class timelog : Form
   Controls.Add( new Button()
     {Location = new System.Drawing.Point(728, 22),Name = "m30"      ,Size = new System.Drawing.Size(32, 18) ,TabIndex = 4,Text = "30",UseVisualStyleBackColor = true});
   Controls.Add( new Button()
-    {Location = new System.Drawing.Point(728, 42),Name = "m60"      ,Size = new System.Drawing.Size(32, 18) ,TabIndex = 4,Text = "30",UseVisualStyleBackColor = true});
+    {Location = new System.Drawing.Point(728, 42),Name = "m60"      ,Size = new System.Drawing.Size(32, 18) ,TabIndex = 4,Text = "60",UseVisualStyleBackColor = true});
 
   getcontrol("LogButton").Click += (s,e)=>{if (getcontrol("LogText").Text!=""){log();}PopupTimer.Enabled=true;WindowState=FormWindowState.Minimized;};
   getcontrol("Quit").Click += (s,e)=>{if(getcontrol("LogText").Text!=""){log();}Close();Application.Exit();};
