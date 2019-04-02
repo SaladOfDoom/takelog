@@ -69,6 +69,7 @@ class timelog : Form
   Load += (s,e)=>{dotick();};
   Resize += (s,e)=>{if(WindowState!=FormWindowState.Minimized){dotick();}else{UpdateTimeTimer.Enabled=false;}};
   ClientSize = new System.Drawing.Size(762, 71);
+  minchange(30);
   ResumeLayout(false);
   PerformLayout();
  }
@@ -110,7 +111,12 @@ class timelog : Form
   StreamReader f;
   string thisstr = "";
   string ret = "";
-  //open the logfile
+  //open the logfile, create it if not exists
+  if (!System.IO.File.Exists(logfile)){
+    var t= new System.IO.StreamWriter(logfile);
+    t.WriteLine("");
+    t.Close();
+  }
   f = new System.IO.StreamReader(logfile);
   while (!f.EndOfStream)
   {
