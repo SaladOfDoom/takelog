@@ -32,6 +32,7 @@ class timelog : Form
 
  public timelog()
  {
+  this.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
   SuspendLayout(); //don't paint the form as we go, wait until we're finished building the form
   AutoScaleDimensions = new System.Drawing.SizeF(6, 13);
   AutoScaleMode = AutoScaleMode.Font;
